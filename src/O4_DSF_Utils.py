@@ -368,7 +368,7 @@ def build_dsf(tile,download_queue):
                     except: pass
             if needs_new_terrain:
                 terrain_idx=len(dico_terrains)
-                textured_tris[terrain_idx]=defaultdict(lambda: array.array('I'))
+                textured_tris[terrain_idx]=defaultdict(lambda: array.array('H'))
                 dico_terrains[terrain_attributes]=terrain_idx
                 is_overlay=tri_type==2 or (tri_type==1 and not (tile.experimental_water & 1))
                 if is_overlay: overlay_terrains.add(terrain_idx)
@@ -394,7 +394,7 @@ def build_dsf(tile,download_queue):
         # We put the tri in the right terrain   
         # First the ones associated to the dico_customzl 
         if terrain_idx:
-            tri_p=array.array('I')
+            tri_p=array.array('H')
             for n in (n1,n3,n2):     # beware of ordering for orientation ! 
                 idx_pool=idx_node_to_idx_pool[n]
                 node_hash=(idx_pool,*node_icoords[5*n:5*n+2],terrain_idx)
@@ -521,7 +521,7 @@ def build_dsf(tile,download_queue):
             terrain_idx=dico_terrains[terrain_attributes]
         else:
             terrain_idx=len(dico_terrains)
-            textured_tris[terrain_idx]=defaultdict(lambda: array.array('I'))
+            textured_tris[terrain_idx]=defaultdict(lambda: array.array('H'))
             dico_terrains[terrain_attributes]=terrain_idx
             is_overlay=(tri_type==1 and not (tile.experimental_water & 1))
             if is_overlay: overlay_terrains.add(terrain_idx)
@@ -544,7 +544,7 @@ def build_dsf(tile,download_queue):
             bTERT+=bytes('terrain/'+terrain_file_name+'\0','ascii') 
         # We put the tri in the right terrain   
         # First the ones associated to the dico_customzl 
-        tri_p=array.array('I')
+        tri_p=array.array('H')
         for n in (n1,n3,n2):     # beware of ordering for orientation ! 
             idx_pool=idx_node_to_idx_pool[n]
             node_hash=(idx_pool,*node_icoords[5*n:5*n+2],terrain_idx)
