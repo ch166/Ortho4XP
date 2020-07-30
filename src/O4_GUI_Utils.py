@@ -28,7 +28,7 @@ OsX='dar' in sys.platform
 class Ortho4XP_GUI(tk.Tk):
 
     # Constants
-    zl_list         = ['12','13','14','15','16','17','18']
+    zl_list         = ['12','13','14','15','16','17','18','19']
 
     def __init__(self):
         tk.Tk.__init__(self)
