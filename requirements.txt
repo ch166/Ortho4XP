@@ -1,6 +1,6 @@
 requests==2.23.0
 numpy==1.22.0rc1
-Pillow==9.0.1
+Pillow==10.2.0
 pyproj==2.6.0
 shapely==1.7.0
 rtree==0.9.4
