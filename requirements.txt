@@ -4,3 +4,4 @@ Pillow==9.0.1
 pyproj==2.6.0
 shapely==1.7.0
 rtree==0.9.4
+idna>=3.7 # not directly required, pinned by Snyk to avoid a vulnerability
