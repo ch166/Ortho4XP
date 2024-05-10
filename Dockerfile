@@ -1,4 +1,4 @@
-FROM python:3.7-slim
+FROM python:3.13.0b1-slim
 
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV LANG="en_US.UTF-8"
@@ -30,7 +30,7 @@ RUN gcc -O2 -pipe -msse3 \
 ADD http://dev.x-plane.com/download/tools/xptools_lin_15-3.zip /tmp/
 RUN unzip /tmp/xptools_lin_15-3.zip tools/DSFTool -d /tmp/xptools
 
-FROM python:3.7-slim
+FROM python:3.13.0b1-slim
 
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV LANG="en_US.UTF-8"
